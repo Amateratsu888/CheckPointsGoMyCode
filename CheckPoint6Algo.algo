@@ -1,26 +1,22 @@
-ALGORITHM sentence
+ALGORITHM sentenceCompteur
 VAR
-    letter:=0;
     word:=1;
-    voy:=0;
-    sent[]:CHAR;
+    voyelle:=0;
+    sentence[]:CHAR;
 
 BEGIN
     Write('Veuillez saisir votre phrase: ')
-    read(sent);
-    WHILE (sent[i] <> '.') DO
-    IF (sent[i] <> ' ' || sent[i] <> '.' || sent[i] <> ';' || sent[i] <> "'") THEN
-        letter++;
-            IF (sent[i] == 'a' || sent[i] == 'o' || sent[i] == 'u' || sent[i] == 'i' || sent[i] == 'e' || sent[i] == 'y') THEN
-                voy++;
+    read(sentence);
+    WHILE (sentence[i] <> '.') DO
+            IF (sentence[i] == 'a' || sentence[i] == 'o' || sentence[i] == 'u' || sentence[i] == 'i' || sentence[i] == 'e' || sentence[i] == 'y') THEN
+                voyelle++;
             END_IF    
-    END_IF
-    IF (sent[i] == ' ') THEN
+    IF (sentence[i] == ' ') THEN
         word++;
     END_IF
     i++
     END_WHILE
     Write('le nombre de mot est '+word);
-    Write('le nombre de lettre est '+letter);
-    Write('le nombre de voyelle est '+voy);
+    Write('le nombre de caratere est '+sentence.lenght);
+    Write('le nombre de voyelle est '+voyelle);
 END
